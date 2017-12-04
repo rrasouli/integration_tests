@@ -10,6 +10,8 @@ IMAGE_SPEC = [
     ('fedora:25', 'python3'),
     ('fedora:26', 'python3'),
     ('fedora:27', 'python3'),
+    pytest.param('rhel:7', 'python2', marks=pytest.mark.xfail(
+        run=False, reason='bad rhel packageset')),
     pytest.param('centos:7', 'python2', marks=pytest.mark.xfail(
         run=False, reason='bad centos packageset')),
 ]
